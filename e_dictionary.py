@@ -16,9 +16,9 @@ def main():
     root = tk.Tk()
     root.geometry('{}x{}+{}+{}'.format(610, 400, 1200,150))
     ttk.Style().configure("TLabel", padding=12, relief="flat",
-                          font=('Arial 12 bold'), wraplength=600)
-    text1 = ttk.Label(root, text= word)
-    text2 = ttk.Label(root, text= description)
+                          wraplength=600)
+    text1 = ttk.Label(root, font=('Arial 14 bold'), text= word)
+    text2 = ttk.Label(root, font=('Arial 12'), text= description)
     text1.pack()
     text2.pack()
     root.after(7000, lambda: root.destroy())
