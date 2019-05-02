@@ -11,13 +11,19 @@ from gtts import gTTS
 def main():
     def speech():
         mixer.init()
-        tts=gTTS(text=word, lang='en')
-        tts.save('1.mp3')
-        mixer.music.load('1.mp3')
-        mixer.music.play()
-        while mixer.music.get_busy():
-            time.sleep(0.03)
-        mixer.music.stop()
+        try:
+            tts=gTTS(text=word, lang='en')
+            tts.save('1.mp3')
+            mixer.music.load('1.mp3')
+            mixer.music.play()
+            while mixer.music.get_busy():
+                time.sleep(0.03)
+            mixer.music.stop()
+            
+        except Exception:
+            pass
+
+
 
     words = json.load(open(filename))
     word, description = random.choice(list(words.items()))
