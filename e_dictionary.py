@@ -11,12 +11,12 @@ def main():
 
     words = json.load(open(filename))
     word, description = random.choice(list(words.items()))
-    # description = '\n- '+'\n- '.join(description)
+    description = '\n\n- '.join(description)
     print(word, description)
     root = tk.Tk()
-    root.geometry('{}x{}+{}+{}'.format(610, 400, position_y, position_x))
+    root.geometry('{}x{}+{}+{}'.format(400, 200, position_y, position_x))
     ttk.Style().configure("TLabel", padding=12, relief="flat",
-                          wraplength=600)
+                          wraplength=450)
     text1 = ttk.Label(root, font=('Arial 20 bold'), text= word)
     text2 = ttk.Label(root, font=('Arial 12'), text= description)
     text1.pack()

@@ -22,11 +22,15 @@ for tr in root.select('tr'):
         continue
 
     en = [td_list[1]]
-    transcription = [td_list[3]]
-    ru = [td_list[5]]
+    # transcription = [td_list[3]]
+    ru = [td_list[3], td_list[5]]
 
-    print(td_list)
-    en_ru_items.update(dict(zip(en, [transcription, ru])))
+    # c = {item: ru[:] for item in en}
+    # print(c)
+
+    # print(td_list)
+    en_ru_items.update({item: ru[:] for item in en})
+    # en_ru_items.update(dict(zip(en, ru)))
     print(len(en_ru_items), en_ru_items)
 
     with open('en_ru_dict.json', 'w', encoding='utf-8') as fp:
