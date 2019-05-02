@@ -24,7 +24,7 @@ def main():
     root.after(8000, lambda: root.destroy())
     root.mainloop()
 
-sleep_sec = random.randint(20, 25)
+sleep_sec = random.randint(20, 500)
 position_x = random.randint(50, 700)
 position_y = random.randint(50, 1200)
 
@@ -33,6 +33,6 @@ position_y = random.randint(50, 1200)
 if __name__ == '__main__':
     dirname = os.path.dirname(__file__)
     filename = os.path.join(dirname, "dictionary.json")
-    for i in range(1):
-        # time.sleep(sleep_sec)
+    for i in range(1000):
+        time.sleep(sleep_sec)
         main()
