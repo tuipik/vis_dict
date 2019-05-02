@@ -14,13 +14,14 @@ def main():
     description = '\n\n- '.join(description)
     print(word, description)
     root = tk.Tk()
+    root.title("Dictionary")
     root.geometry('{}x{}+{}+{}'.format(400, 200, position_y, position_x))
     ttk.Style().configure("TLabel", padding=12, relief="flat",
                           wraplength=450)
     text1 = ttk.Label(root, font=('Arial 20 bold'), text= word)
     text2 = ttk.Label(root, font=('Arial 12'), text= description)
-    text1.pack()
-    text2.pack()
+    text1.pack(expand=1, anchor='center')
+    text2.pack(expand=1, anchor='center')
     root.after(8000, lambda: root.destroy())
     root.mainloop()
 
